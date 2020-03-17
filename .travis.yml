@@ -18,7 +18,7 @@ before_script:
 - npm --version
 - node_modules/.bin/newman --version
 script:
-- python -m unittest discover
+# - python -m unittest discover
 - docker build -t swagger-spring-example:1.0.0 .
 - docker run --name example_api -d -t -p 127.0.0.1:8080:8080 swagger-spring-example:1.0.0
 - docker ps
@@ -29,7 +29,7 @@ script:
 - node_modules/.bin/newman run tests/devops_tutorial.postman_collection.json -e tests/devops_tutorial.postman_environment.json
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
-- docker tag my_docker_reposetory/swagger_server my_docker_reposetory/swagger_server
+# - docker tag my_docker_reposetory/swagger_server my_docker_reposetory/swagger_server
 - docker push my_docker_reposetory/swagger_server
 env:
   global:
