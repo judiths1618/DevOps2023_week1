@@ -56,10 +56,10 @@ def get_student_by_id(student_id, subject=None):  # noqa: E501
     :rtype: Student
     """
     # return 'do some magic!'
-    print('id&subject query', student_id, subject, connexion.request, connexion.request.query_string)
-    query_string = connexion.request.query_string.decode()
+    # print('id&subject query', student_id, subject, connexion.request, connexion.request.query_string)
+    # query_string = connexion.request.query_string.decode()
     
-    print("id&subject", student_id, subject)
+    # print("id&subject", student_id, subject)
     # res = student_service.get_student_by_id(student_id, subject=subject)
     if subject is None:
         res1 = student_service.get_student_by_id(student_id, subject)
@@ -83,11 +83,11 @@ def get_student_by_last_name(last_name=None):  # noqa: E501
     :rtype: Student
     """
     # return 'do some magic!'
-    print('last name query', last_name, connexion.request, connexion.request.query_string)
-    query_string = connexion.request.query_string.decode()
+    # print('last name query', last_name, connexion.request, connexion.request.query_string)
+    # query_string = connexion.request.query_string.decode()
     # last_name = query_string.split('=')[1]
     # last_name = query_string
-    print("last name",last_name)
+    # print("last name",last_name)
     
     res = student_service.get_student_by_last_name(last_name)
     if res:

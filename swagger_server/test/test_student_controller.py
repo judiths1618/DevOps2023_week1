@@ -19,7 +19,6 @@ class TestStudentController(BaseTestCase):
         Add a new student
         """
         body = Student()
-        # body.student_id = 2
         body.first_name = names.get_first_name()
         body.last_name = names.get_last_name()
         body.grades = {'The_Mathematics_of_Quantum_Neutrino_Fields': 0, '20th_Century_History': 0}
@@ -41,7 +40,6 @@ class TestStudentController(BaseTestCase):
         Find student by ID
         """
         body = Student()
-        # body.student_id = 1
         body.first_name = names.get_first_name()
         body.last_name = names.get_last_name()
         body.grades = {'math': 8, 'history': 9}
@@ -53,7 +51,6 @@ class TestStudentController(BaseTestCase):
         student_id = (response.json)['student_id']
         # student_id = (response.json)
         query_string = [('subject','math')]
-        # query_string = 'math'
         response = self.client.open(
             '/service-api/student/{student_id}'.format(student_id=student_id),
             method='GET',
@@ -70,7 +67,6 @@ class TestStudentController(BaseTestCase):
         Delete student by ID
         """
         body = Student()
-        # body.student_id = 1
         body.first_name = names.get_first_name()
         body.last_name = names.get_last_name()
         body.grades = {'math': 8, 'history': 9}
@@ -79,10 +75,8 @@ class TestStudentController(BaseTestCase):
             method='POST',
             data=json.dumps(body),
             content_type='application/json')
-        print('lllll', response.json)
         student_id = (response.json)['student_id']    # 学生id
         # student_id = (response.json)
-        print('test_student_controller delete id: ', student_id, response.json)
         response = self.client.open(
             '/service-api/student/{student_id}'.format(student_id=student_id),
             method='DELETE')
@@ -96,7 +90,6 @@ class TestStudentController(BaseTestCase):
         Find student by last name
         """
         body = Student()
-        # body.student_id = 1
         body.first_name = names.get_first_name()
         body.last_name = names.get_last_name()
         body.grades = {'Chinese': 8, 'history': 9}
