@@ -1,0 +1,164 @@
+openapi: 3.0.1
+info:
+  title: Swagger tutorial
+  description: "Swagger tutorial. You can find on \n https://github.com/judiths1618/week2lab-TA/blob/master/swagger_server/swagger/swagger.yaml"
+  version: 1.0.0
+servers:
+- url: /service-api
+paths:
+  /student:
+    post:
+      tags:
+      - student
+      summary: Add a new student
+      operationId: add_student
+      requestBody:
+        description: Student object that needs to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Student'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                type: integer
+                format: int64
+            application/json:
+              schema:
+                type: integer
+                format: int64
+        405:
+          description: Invalid input
+          content: {}
+        409:
+          description: already exists
+          content: {}
+      x-swagger-router-controller: swagger_server.controllers.student_controller
+      x-codegen-request-body-name: body
+  /student/{student_id}:
+    get:
+      tags:
+      - student
+      summary: Find student by ID
+      description: Returns a single student
+      operationId: get_student_by_id
+      parameters:
+      - name: student_id
+        in: path
+        description: ID of student to return
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: subject
+        in: query
+        description: The subject name
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Student'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: student not found
+          content: {}
+      x-swagger-router-controller: swagger_server.controllers.student_controller
+    delete:
+      tags:
+      - student
+      summary: Delete student by ID
+      description: Delete a single student
+      operationId: delete_student
+      parameters:
+      - name: student_id
+        in: path
+        description: ID of student to use
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Student'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: student not found
+          content: {}
+      x-swagger-router-controller: swagger_server.controllers.student_controller
+  /student/:
+    get:
+      tags:
+      - student
+      summary: Find student by last name
+      description: Returns a single student
+      operationId: get_student_by_last_name
+      parameters:
+      - name: last_name
+        in: query
+        description: The last name
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Student'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+        400:
+          description: Invalid last name supplied
+          content: {}
+        404:
+          description: student not found
+          content: {}
+      x-swagger-router-controller: swagger_server.controllers.student_controller
+components:
+  schemas:
+    Student:
+      type: object
+      properties:
+        student_id:
+          type: integer
+          format: int64
+        first_name:
+          type: string
+        last_name:
+          type: string
+        grades:
+          type: object
+          additionalProperties:
+            type: integer
+      example:
+        student_id: 0
+        last_name: last_name
+        grades:
+          key: 6
+        first_name: first_name
