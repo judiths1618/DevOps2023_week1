@@ -49,9 +49,9 @@ docker run -p 8080:8080 swagger_server
 �
 �
 ```
-## Hints to give the students
+# Hints to give the students
 
-# Week1
+## Week1
 How to declare properties in OpenAPI Objects
 components:
   schemas:
