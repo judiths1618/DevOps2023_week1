@@ -53,6 +53,7 @@ docker run -p 8080:8080 swagger_server
 
 ## Week1
 How to declare properties in OpenAPI Objects
+```
 components:
   schemas:
     Student:
@@ -61,3 +62,4 @@ components:
         student_id:
           type: integer
           format: int64
+```
