@@ -63,3 +63,5 @@ components:
           type: integer
           format: int64
 ```
+How to set float
+https://swagger.io/docs/specification/data-models/data-types/
