@@ -45,10 +45,10 @@ docker build -t swagger_server .
 
 # starting up a container
 docker run -p 8080:8080 swagger_server
-```#� �w�e�e�k�2�l�a�b�_�v�3�
+#� �w�e�e�k�2�l�a�b�_�v�3�
 �
 �
-
+```
 ## Hints to give the students
 
 # Week1
