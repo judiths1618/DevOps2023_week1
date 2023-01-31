@@ -68,8 +68,5 @@ How to set float
 https://swagger.io/docs/specification/data-models/data-types/
 
 
-{% note %}
-
-**Note:** Owners and administrators can add outside collaborators to a repository.
-
-{% endnote %}
+> **Note**
+> This is a note
