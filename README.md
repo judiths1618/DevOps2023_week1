@@ -67,7 +67,10 @@ How to set float
 
 https://swagger.io/docs/specification/data-models/data-types/
 
+Using Python environments in VS Code
 
-> **Note**
-> 
-> This is a note
+https://code.visualstudio.com/docs/python/environments
+
+How to Manage Python Dependencies with Conda
+
+https://www.activestate.com/resources/quick-reads/how-to-manage-python-dependencies-with-conda/
