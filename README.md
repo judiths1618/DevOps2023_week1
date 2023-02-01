@@ -75,6 +75,4 @@ How to Manage Python Dependencies with Conda
 
 https://www.activestate.com/resources/quick-reads/how-to-manage-python-dependencies-with-conda/
 
-Install conda requirements.txt into already activated environment
-
-`conda install --file requirements.txt`
+`pip install -r requirements.txt`
