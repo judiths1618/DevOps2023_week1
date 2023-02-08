@@ -63,6 +63,13 @@ components:
           type: integer
           format: int64
 ```
+How to reference to an item inside an array
+```
+    # Array of Pets
+    type: array
+    items:
+      $ref: '#/components/schemas/Pet'
+```
 How to set float
 
 https://swagger.io/docs/specification/data-models/data-types/
