@@ -75,6 +75,17 @@ How to set float
 https://swagger.io/docs/specification/data-models/data-types/
 
 
+
+
+
 > **Note**
 > 
-> REGISTRY_USERNAME is your Dockerhub username 
+> REGISTRY_USERNAME and REPO_NAME should be your Dockerhub username 
+
+> **Warning**
+> Build action fails with COPY .. /usr/src/app
+> Should be COPY . /usr/src/app
+
+
+
+
