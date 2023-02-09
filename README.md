@@ -86,9 +86,9 @@ https://swagger.io/docs/specification/data-models/data-types/
 
 > **Warning**
 > 
-> Build action fails with COPY .. /usr/src/app
+> Build action fails with `COPY .. /usr/src/app`
 > 
-> Should be COPY . /usr/src/app
+> Should be `COPY . /usr/src/app`
 
 
 
