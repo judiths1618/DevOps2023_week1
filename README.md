@@ -83,7 +83,9 @@ https://swagger.io/docs/specification/data-models/data-types/
 > REGISTRY_USERNAME and REPO_NAME should be your Dockerhub username 
 
 > **Warning**
+> 
 > Build action fails with COPY .. /usr/src/app
+> 
 > Should be COPY . /usr/src/app
 
 
