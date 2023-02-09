@@ -77,4 +77,4 @@ https://swagger.io/docs/specification/data-models/data-types/
 
 > **Note**
 > 
-> This is a note
+> REGISTRY_USERNAME is your Dockerhub username 
